@@ -3,7 +3,7 @@ import './App.css';
 import { useState, useEffect } from "react";
 import { BsTrash, BsBookmarkCheck, BsBookmarkCheckFill} from "react-icons/bs"
 
-const API = "http://localhost:5000";
+const API = "http://localhost:3000";
 
 function App() {
   const [title, setTitle] = useState("")
@@ -26,7 +26,11 @@ function App() {
 
       setLoading(false)
 
-      setTodos(res)
+      if(todos == undefined){
+        setTodos(0)
+      }else{
+        // setTodos(res)
+      }
     }
 
     loadData();
